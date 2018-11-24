@@ -1,0 +1,115 @@
+﻿using Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Domain.Entity;
+using System.Net;
+using System.Data.Entity;
+
+namespace firstCreatMVC.Controllers
+{
+    public class CategoryController : Controller
+    {
+        private ShopDbContext db = new ShopDbContext();
+
+        public ActionResult Index()
+        {
+            return View(db.Categories.ToList());
+        }
+        // GET: Category
+      
+
+        // GET: Category/Details/5
+        public ActionResult Details(Guid id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
+
+        // GET: Category/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Category/Create
+        [HttpPost]
+        public ActionResult Create([Bind(Include = "ID,Name,Description,ParentId,SiteId,CreatedDate,CreatedBy,UpdateDate,UpdateBy,Status,IsDeleted")] Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Categories.Add(category);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+            
+        }
+
+        // GET: Category/Edit/5
+        public ActionResult Edit(Guid id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
+
+        // POST: Category/Edit/5
+        //chua duoc
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "CreatedDate")] Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(category).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+
+        // GET: Category/Delete/5
+        public ActionResult Delete(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category== null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
+
+        // POST: Category/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(Guid id)
+        {
+            Category  category= db.Categories.Find(id);
+            db.Categories.Remove(category);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+}

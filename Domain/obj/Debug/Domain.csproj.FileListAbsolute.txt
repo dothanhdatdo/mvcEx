@@ -1,0 +1,13 @@
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\Domain.dll.config
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\Domain.dll
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\Domain.pdb
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\EntityFramework.dll
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\EntityFramework.SqlServer.dll
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\EntityFramework.xml
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\bin\Debug\EntityFramework.SqlServer.xml
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.dll
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.pdb
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.Migrations.one.resources
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
+F:\asp.net t3h\Learn_Backend\MVC2\Shop\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
